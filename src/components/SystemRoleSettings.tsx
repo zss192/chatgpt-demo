@@ -1,4 +1,4 @@
-import { Show, createSignal, createEffect } from 'solid-js'
+import { Show, createEffect, createSignal } from 'solid-js'
 import IconEnv from './icons/Env'
 import IconX from './icons/X'
 import SettingsSlider from './SettingsSlider'
@@ -35,7 +35,7 @@ export default (props: Props) => {
               <Show when={props.canEdit()} fallback={<IconEnv />}>
                 <span onClick={() => props.setCurrentSystemRoleSettings('')} class="sys-edit-btn p-1 rd-50%" > <IconX /> </span>
               </Show>
-              <span>System Role: </span>
+              <span>System Role ( Temp = {temperature()} ) : </span>
             </div>
             <div class="mt-1">
               {props.currentSystemRoleSettings()}
